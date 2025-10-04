@@ -103,6 +103,9 @@ if(SET_USER_BREAK_AT_STARTUP)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBPDEBUG")
 endif()
 
+# required by librealsense2-dev for building from source on jetson.
+find_package(fastcdr REQUIRED PATHS /usr/local/lib/cmake/fastcdr NO_DEFAULT_PATH)
+find_package(fastrtps REQUIRED PATHS /usr/local/share/fastrtps/cmake NO_DEFAULT_PATH)
 
 find_package(ament_cmake REQUIRED)
 find_package(builtin_interfaces REQUIRED)
